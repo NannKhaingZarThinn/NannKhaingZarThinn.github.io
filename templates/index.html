@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 
+
 <html>
     
   <head>
@@ -16,17 +17,17 @@
                     </script> 
                 <!-- end of service worker -->
         <!-- start of web manifest -->
-        <link rel="manifest" href="/manifest.json">
+	<link rel="manifest" href="{{url_for('static', filename='manifest.json')}}">
          <!-- end of web manifest -->
            <!-- theme-color -->
         <meta name="theme-color" content="#fff" />
         <!-- end-theme-color -->
-        <script src="assets/jquery.min.js"></script> 
-        <script src="assets/skel.min.js"></script>
-        <script src="assets/util.js"></script>
-        <script src="assets/respond.min.js"></script>
-        <script src="assets/responsive.js"></script>
-        <link rel="stylesheet" href="assets/main.css" />
+	<script src="{{url_for('static',filename='assets/jquery.min.js')}}"></script> 
+	<script src="{{url_for('static', filename='assets/skel.min.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/util.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/respond.min.js')}}"></script>
+	<script src="{{url_for('static',filename='assets/responsive.js')}}"></script>
+	<link rel="stylesheet" href="{{url_for('static', filename='assets/main.css')}}" />
         <title>PWA Fire Codelab Demo</title>
         <meta charset="utf-8">
             
@@ -56,9 +57,9 @@
                         
 <article id="home" class="panel special" style="display: flex;">
                             
-   <div class="image" style="background-image: url(&quot;images/nkzt1.jpg&quot;); background-position: center center;">
+	<div class="image" style="background-image: url(&quot;{{url_for('static', filename='nkzt1.jpg')}}&quot;); background-position: center center;">
     
-    <img src="images/nkzt1.jpg" alt="" data-position="center center" 
+		<img src="url_for('static', filename='nkzt1.jpg')}}" alt="" data-position="center center" 
                                 
    style="display: none;">
                             
@@ -67,10 +68,13 @@
      <div class="content">
                                 
         <div class="inner">
+	{% set namee = "NANN KHAING ZAR THINN" %}
+	{% set name1 = "NannKhaingZarThinn" %}
+	{% set name2 = "NannLaMinKhaing" %}
                                     
-        <header><h1>NANN KHAING ZAR THINN</h1>
+	<header><h1>{{ namee }}</h1>
                                         
-		<p>A student from CU MDY learning Cloud Native Development. <br> My GitHub is at <br><a href="http://github.com/NannKhaingZarThinn">GitHub</a></p>
+		<p>A student from CU MDY learning Cloud Native Development. <br> My GitHub is at <br><a href="http://github.com/{{ name1 }}">GitHub</a></p>
                                     
             </header>
                                     
@@ -94,9 +98,9 @@
                          <a href="https://twitter.com/NannKhaing" class="icon fa-twitter">
                                         
                 <span class="label">Twitter</span></a></li>
-                    <li><a href="https://facebook.com/NannLaMinKhaing" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+		    <li><a href="https://facebook.com/{{ name2 }}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                                         
-                <li><a href="https://github.com/NannKhaingZarThinn" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		    <li><a href="https://github.com/{{ name1 }}" class="icon fa-github"><span class="label">GitHub</span></a></li>
                                         
                   <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a>
                                         
@@ -112,8 +116,8 @@
     
     <article id="work" class="panel secondary inactive" style="display: none;">
            
-        <div class="image" style="background-image: url(&quot;images/pic04.jpg&quot;);background-position: center center;">
-        <img src="images/pic04.jpg" alt="" data-position="center center" style="display: none;">
+	    <div class="image" style="background-image: url(&quot;{{url_for('static', filename='pic04.jpg')}}&quot;);background-position: center center;">
+		    <img src="url_for('static',filename='pic04.jpg')}}" alt="" data-position="center center" style="display: none;">
         </div> 
         <div class="content">
         <ul class="actions spinX"><li>
@@ -155,8 +159,8 @@
                         
         <article id="about" class="panel secondary inactive" style="display: none;">
                             
-        <div class="image" style="background-image: url(&quot;images/nkzt.jpg&quot;); background-position: center center;">
-        <img src="images/nkzt.jpg" alt="" data-position="center center" style="display: none;">
+		<div class="image" style="background-image: url(&quot;url_for('static', filename='nkzt.jpg')}}&quot;); background-position: center center;">
+			<img src="{{url_for('static', filename='nkzt.jpg')}}" alt="" data-position="center center" style="display: none;">
          </div>
     
          <div class="content">
@@ -193,9 +197,9 @@
      
       <article id="contact" class="panel secondary inactive" style="display: none;">
                 
-            <div class="image" style="background-image: url(&quot;images/nkzt1.jpg&quot;); background-position: center bottom;">
+	      <div class="image" style="background-image: url(&quot;{{url_for('static', filename='nkzt1.jpg')}}&quot;); background-position: center bottom;">
                 
-            <img src="images/nkzt1.jpg" alt="" data-position="bottom center" style="display: none;">
+		      <img src="{{url_for('static', filename='nkzt1.jpg')}}" alt="" data-position="bottom center" style="display: none;">
         
             </div><div class="content">
                 
@@ -219,7 +223,7 @@
                 
             </header>
 
-            <form name="contactform" method="post" action="assets/send-email.php">
+	    <form name="contactform" method="post" action="{{url_for('static', filename='assets/send-email.php')}}">
             
             <div class="field half first">
                                
